@@ -88,6 +88,7 @@ hr {
     height: 3rem;
 }
 #footer p {
+    font-family: sans-serif;
     color: dimgrey;
     font-size: 0.75rem;
     padding-bottom: 1.5rem;
