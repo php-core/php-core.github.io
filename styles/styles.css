@@ -1,4 +1,4 @@
-html, body {
+.container {
     font-family: 'Handel Gothic', sans-serif;
     background-color: aliceblue;
 }
@@ -87,6 +87,7 @@ hr {
 #footer {
     height: 3rem;
 }
+
 #footer p {
     font-family: sans-serif;
     color: dimgrey;
