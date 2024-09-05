@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Handel Gothic';
+    src: url('../fonts/HandelGothic.woff2') format('woff2'),
+        url('../fonts/HandelGothic.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Mono Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF Mono Bold'), url('../fonts/SFMonoBold.woff') format('woff');
+}

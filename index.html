@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>php-core.com</title>
+    <meta property="og:image" content="/img/og-banner.png"/>
+    <meta property="og:title" content="php-core.com"/>
+    <meta property="og:description" content="Developing composer packages for several use cases :)"/>
+    <link rel="stylesheet" href="/styles/fonts.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+
+<body>
+<div id="container">
+    <div id="header">
+        <h1>
+            <a href="https://php-core.com">php-core.com</a>
+        </h1>
+        <h1 class="divider">|</h1>
+        <a id="githubButton" href='https://github.com/php-core'>
+            <span>Check out on</span> <img style="height: 50px" src="/img/github-mark.png" alt="GitHub"/>
+        </a>
+    </div>
+    <hr>
+    <div style="text-align: center">
+        <img id="banner" alt="php-core banner" src="/img/og-banner.png"/>
+    </div>
+    <hr style="margin-top: 2.5rem">
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+        <h1>Repositories</h1>
+        <input type="search" id="searchInput" placeholder="Search..." />
+    </div>
+    <div id="repositories">
+        <h1>...</h1>
+    </div>
+    <hr>
+    <footer>
+        <p>Copyright &copy; 2024 php-core.com</p>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+<script>
+    const gh = new GitHub();
+    const phpCore = gh.getUser('php-core');
+    const repositoriesContainer = document.getElementById('repositories');
+    phpCore.listRepos()
+        .then(function ({data: reposJson}) {
+            repositoriesContainer.innerHTML = '';
+            reposJson.map(repoItem => {
+                const repoItemChild = document.createElement('a');
+                repoItemChild.className = 'repository-item';
+                repoItemChild.dataset.name = repoItem.name;
+                repoItemChild.href = repoItem.html_url;
+                repoItemChild.target = '_blank';
+                repoItemChild.innerHTML = '<h2>' + repoItem.name + '</h2>'
+                    + '<p>' + repoItem.description.substring(0, 50) + '</p>';
+                repositoriesContainer.appendChild(repoItemChild);
+            })
+        });
+
+    const searchInput = document.getElementById('searchInput');
+    searchInput.oninput = (event) => {
+        for (const child of [...repositoriesContainer.children]) {
+            child.style.display = (child.dataset?.name ?? '').toLowerCase().includes(event.target.value.toLowerCase())
+                ? 'block'
+                : 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
