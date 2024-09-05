@@ -1,7 +1,10 @@
+html, body {
+    background-color: aliceblue;
+}
+
 #container {
     text-align: center;
     font-family: 'Handel Gothic', sans-serif;
-    background-color: aliceblue;
 }
 
 hr {
@@ -81,13 +84,14 @@ hr {
     color: #fff;
 }
 
-#footer {
+footer {
     height: 3rem;
 }
 
-#footer p {
+footer p {
+    text-align: center;
     font-family: sans-serif;
     color: dimgrey;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     padding-bottom: 1.5rem;
 }
