@@ -51,11 +51,30 @@ hr {
     font-family: 'SF Mono Bold', serif;
 }
 
+#githubButton img {
+    height: 50px;
+}
+
+#repositoriesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#repositoriesHeader label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
 #searchInput {
     padding: 0.5rem 1rem;
-    border-radius: 10px;
     width: 250px;
     margin-left: 1.5rem;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #A9A9AC;
+    border-style: solid;
 }
 
 #repositories {
