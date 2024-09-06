@@ -52,7 +52,8 @@
                 repoItemChild.href = repoItem.html_url;
                 repoItemChild.target = '_blank';
                 repoItemChild.innerHTML = '<h2>' + repoItem.name + '</h2>'
-                    + '<p>' + repoItem.description.substring(0, 50) + '</p>';
+                    + '<p>' + repoItem.description.substring(0, 50)
+                    + (repoItem.description.length > 50 ? '...' : '') + '</p>';
                 repositoriesContainer.appendChild(repoItemChild);
             })
         });
