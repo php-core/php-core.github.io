@@ -103,6 +103,10 @@ hr {
     color: #fff;
 }
 
+.repository-item p {
+    text-wrap: pretty;
+}
+
 footer {
     height: 3rem;
 }
