@@ -51,7 +51,10 @@
                 repoItemChild.dataset.name = repoItem.name;
                 repoItemChild.href = repoItem.html_url;
                 repoItemChild.target = '_blank';
-                repoItemChild.innerHTML = '<h2>' + repoItem.name + '</h2><p>' + repoItem.description + '</p>';
+                repoItemChild.innerHTML =
+                    (repoItem.homepage ? '<a target="_blank" href="' + repoItem.homepage + '" title="Documentation"><img alt="' + repoItem.name + ' documenation" src="/img/documentation.png" /><img class="white" alt="' + repoItem.name + ' documenation" src="/img/documentation-white.png" /></a>' : '')
+                    + '<h2>' + repoItem.name + '</h2>'
+                    +'<p>' + repoItem.description + '</p>';
                 repositoriesContainer.appendChild(repoItemChild);
             })
         });

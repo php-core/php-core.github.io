@@ -96,6 +96,49 @@ hr {
     border-color: #6465A4;
     border-width: 2px;
     border-style: solid;
+    position: relative;
+}
+
+.repository-item a {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.repository-item a:hover {
+    background-color: #fff;
+}
+
+.repository-item img.white {
+    display: none;
+}
+.repository-item:hover img.white {
+    display: initial;
+}
+
+.repository-item img:not(.white) {
+    display: initial;
+}
+.repository-item:hover img:not(.white) {
+    display: none;
+}
+
+.repository-item a:hover img:not(.white) {
+    display: initial;
+}
+
+.repository-item a:hover img.white {
+    display: none;
+}
+
+.repository-item a img {
+    height: 30px;
+    width: auto;
 }
 
 .repository-item:hover {
